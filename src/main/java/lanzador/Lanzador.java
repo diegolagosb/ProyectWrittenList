@@ -1,14 +1,19 @@
+
 package lanzador;
 
+import ventanas.VentanaDeTipoLista;
+import ventanas.VentanaLogin;
+
+/**
+ *
+ * @author Diego Lagos
+ */
 public class Lanzador {
 
-	/**
-	 * 
-	 * @param args
-	 */
-	public void main(String[] args) {
-		// TODO - implement Lanzador.main
-		throw new UnsupportedOperationException();
-	}
-
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        VentanaLogin vlogin = new VentanaLogin();
+    }    
 }
