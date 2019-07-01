@@ -2,7 +2,7 @@
 package lanzador;
 
 import ventanas.VentanaDeTipoLista;
-import ventanas.VentanaLogin;
+import ventanas.VentanaLoginFinal;
 
 /**
  *
@@ -14,6 +14,7 @@ public class Lanzador {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        VentanaLogin vlogin = new VentanaLogin();
+        VentanaLoginFinal vlf = new VentanaLoginFinal();
+        vlf.setVisible(true);
     }    
 }
