@@ -17,7 +17,15 @@ public class PanelCentro extends JPanel {
         this.setLayout(new FlowLayout(5,10,10));
         this.instruccion = new JLabel("Ingrese el nombre de la lista:");
         this.add(instruccion);
-        this.cuadroTexto = new JTextField("                    ");
+        this.cuadroTexto = new JTextField(40);
         this.add(cuadroTexto);
+    }
+
+    public JLabel getInstruccion() {
+        return instruccion;
+    }
+
+    public JTextField getCuadroTexto() {
+        return cuadroTexto;
     }
 }

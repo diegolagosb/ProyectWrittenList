@@ -9,15 +9,22 @@ public class PanelCentral extends JPanel {
 
     private JTable tabla;
 
-    public PanelCentral(){
-        super();
-        iniciarPanelCentral();
+    public PanelCentral(String nombreLista,JTable tabla){
+        this.tabla = tabla;
+        iniciarPanelCentral(nombreLista);
     }
 
-    private void iniciarPanelCentral(){
-        this.setLayout(new GridLayout(1,1));
-        this.setBorder(BorderFactory.createTitledBorder("Nombre de la lista:"));
-        this.tabla = new JTable(new Object[10][5], new String[]{"Nombre","Apellido","Edad","Email","Apoderado"});
-        this.add(tabla);
+    private void iniciarPanelCentral(String nombreLista){
+        this.setLayout(new BorderLayout());
+        this.setBorder(BorderFactory.createTitledBorder("Lista: "+nombreLista));
+        this.add(new JScrollPane(this.tabla),BorderLayout.CENTER);
+    }
+
+    public JTable getTabla() {
+        return tabla;
+    }
+
+    public void setTabla(JTable tabla) {
+        this.tabla = tabla;
     }
 }

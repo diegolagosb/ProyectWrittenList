@@ -4,20 +4,48 @@ import java.util.ArrayList;
 
 public class Lista {
 
-    private ArrayList<Persona> integranteListas;
+    private ArrayList<Estudiante> integranteListasEstudiantes;
+    private ArrayList<Trabajador> integranteListasTrabajadores;
+    private ArrayList<Deportista> integranteListasDeportistas;
     private String nombreLista;
-    private String tipoLista;
+    private Persona tipoLista;
 
     public Lista() {
-        this.integranteListas = new ArrayList<Persona>();
+        this.integranteListasEstudiantes = new ArrayList<Estudiante>();
+        this.integranteListasTrabajadores = new ArrayList<Trabajador>();
+        this.integranteListasDeportistas = new ArrayList<Deportista>();
     }
 
-    public ArrayList<Persona> getIntegranteListas() {
-        return integranteListas;
+    public Lista(String nombreLista, Persona tipoLista) {
+        this.integranteListasEstudiantes = new ArrayList<Estudiante>();
+        this.integranteListasTrabajadores = new ArrayList<Trabajador>();
+        this.integranteListasDeportistas = new ArrayList<Deportista>();
+        this.nombreLista = nombreLista;
+        this.tipoLista = tipoLista;
     }
 
-    public void setIntegranteListas(ArrayList<Persona> integranteListas) {
-        this.integranteListas = integranteListas;
+    public ArrayList<Estudiante> getIntegranteListasEstudiantes() {
+        return integranteListasEstudiantes;
+    }
+
+    public void setIntegranteListasEstudiantes(ArrayList<Estudiante> integranteListasEstudiantes) {
+        this.integranteListasEstudiantes = integranteListasEstudiantes;
+    }
+
+    public ArrayList<Trabajador> getIntegranteListasTrabajadores() {
+        return integranteListasTrabajadores;
+    }
+
+    public void setIntegranteListasTrabajadores(ArrayList<Trabajador> integranteListasTrabajadores) {
+        this.integranteListasTrabajadores = integranteListasTrabajadores;
+    }
+
+    public ArrayList<Deportista> getIntegranteListasDeportistas() {
+        return integranteListasDeportistas;
+    }
+
+    public void setIntegranteListasDeportistas(ArrayList<Deportista> integranteListasDeportistas) {
+        this.integranteListasDeportistas = integranteListasDeportistas;
     }
 
     public String getNombreLista() {
@@ -28,11 +56,11 @@ public class Lista {
         this.nombreLista = nombreLista;
     }
 
-    public String getTipoLista() {
+    public Persona getTipoLista() {
         return tipoLista;
     }
 
-    public void setTipoLista(String tipoLista) {
+    public void setTipoLista(Persona tipoLista) {
         this.tipoLista = tipoLista;
     }
 }

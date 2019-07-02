@@ -9,18 +9,13 @@ public class Persona {
 	private String correo;
 
 	public Persona() {
-		// TODO - implement Persona.Persona
-		throw new UnsupportedOperationException();
+
 	}
 
 	public String getNombre() {
 		return this.nombre;
 	}
 
-	/**
-	 * 
-	 * @param nombre
-	 */
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
@@ -29,10 +24,7 @@ public class Persona {
 		return this.apellido;
 	}
 
-	/**
-	 * 
-	 * @param apellido
-	 */
+
 	public void setApellido(String apellido) {
 		this.apellido = apellido;
 	}
@@ -41,10 +33,7 @@ public class Persona {
 		return this.segundoApellido;
 	}
 
-	/**
-	 * 
-	 * @param segundoApellido
-	 */
+
 	public void setSegundoApellido(String segundoApellido) {
 		this.segundoApellido = segundoApellido;
 	}
@@ -53,10 +42,7 @@ public class Persona {
 		return this.rut;
 	}
 
-	/**
-	 * 
-	 * @param rut
-	 */
+
 	public void setRut(String rut) {
 		this.rut = rut;
 	}
@@ -65,12 +51,13 @@ public class Persona {
 		return this.correo;
 	}
 
-	/**
-	 * 
-	 * @param correo
-	 */
+
 	public void setCorreo(String correo) {
 		this.correo = correo;
 	}
 
+	@Override
+	public String toString() {
+		return "Nombre;Apellido;Sgdo.Apellido;Rut;Correo;";
+	}
 }

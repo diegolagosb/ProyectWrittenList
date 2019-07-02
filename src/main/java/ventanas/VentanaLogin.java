@@ -7,9 +7,9 @@ import javax.swing.JOptionPane;
  *
  * @author Diego Lagos
  */
-public class VentanaLoginFinal extends javax.swing.JFrame {
+public class VentanaLogin extends javax.swing.JFrame {
 
-    public VentanaLoginFinal() {
+    public VentanaLogin() {
         initComponents();
     }
 
@@ -34,7 +34,7 @@ public class VentanaLoginFinal extends javax.swing.JFrame {
 
         jInternalFrame1.setVisible(true);
 
-        login.setBackground(new java.awt.Color(0, 153, 204));
+        login.setBackground(new java.awt.Color(0, 51, 153));
         login.setToolTipText("");
 
         lblUsuario.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
@@ -70,7 +70,7 @@ public class VentanaLoginFinal extends javax.swing.JFrame {
             }
         });
 
-        jTextArea2.setBackground(new java.awt.Color(0, 51, 204));
+        jTextArea2.setBackground(new java.awt.Color(0, 102, 153));
         jTextArea2.setColumns(20);
         jTextArea2.setFont(new java.awt.Font("Copperplate Gothic Light", 0, 24)); // NOI18N
         jTextArea2.setRows(5);
@@ -138,7 +138,7 @@ public class VentanaLoginFinal extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(144, 144, 144)
                 .addComponent(jInternalFrame1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(171, Short.MAX_VALUE))
+                .addContainerGap(154, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -164,13 +164,14 @@ public class VentanaLoginFinal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEntrarActionPerformed
 
     private void btnEntrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnEntrarMouseClicked
-        String Usuario = "admin";
-        String contrasenia = "123";
+        final String USUARIO = "admin";
+        final String CONTRASENIA = "writtenlist2019";
         
         String Pass = new String(Password.getPassword());
-        if(txtUsuario.getText().equals(Usuario) && Pass.equals(contrasenia)){
+        if(txtUsuario.getText().equals(USUARIO) && Pass.equals(CONTRASENIA)){
             
-            VentanaDeTipoLista vl = new VentanaDeTipoLista();
+            VentanaMenu vm = new VentanaMenu();
+            vm.setVisible(true);
             dispose();
         }else{
             JOptionPane.showMessageDialog(this, "El usuario y/o la contraseña son inválidos, por favor, vuelta a ingresar los datos correctamente.");

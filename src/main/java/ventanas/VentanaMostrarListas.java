@@ -1,36 +1,29 @@
 package ventanas;
 
+import gestionlistas.Deportista;
 import gestionlistas.GestorLista;
 import gestionlistas.Lista;
 import gestionlistas.Persona;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
-public class VentanaMostrarListas extends JFrame {
+public class VentanaMostrarListas extends JFrame implements ActionListener {
 
     private GestorLista listas;
+    private Object[][] datosTabla;
     private JScrollPane barra;
     private ArrayList<JLabel> nombresListas;
     private ArrayList<JButton> ingresar;
     private ArrayList<JButton> eliminar;
 
 
-    public VentanaMostrarListas() {
-        this.listas = new GestorLista();
-        this.listas.getListas().add(crearLista());
-        this.listas.getListas().add(crearLista());
-        this.listas.getListas().add(crearLista());
-        this.listas.getListas().add(crearLista());
-        this.listas.getListas().add(crearLista());
-        this.listas.getListas().add(crearLista());
-        this.listas.getListas().add(crearLista());
-        this.listas.getListas().add(crearLista());
-        this.listas.getListas().add(crearLista());
-        this.listas.getListas().add(crearLista());
-        this.listas.getListas().add(crearLista());
-        this.listas.getListas().add(crearLista());
+    public VentanaMostrarListas(GestorLista listas,Object[][] datosTabla) {
+        this.datosTabla = datosTabla;
+        this.listas = listas;
         this.nombresListas = new ArrayList<JLabel>();
         this.ingresar = new ArrayList<JButton>();
         this.eliminar = new ArrayList<JButton>();
@@ -54,17 +47,26 @@ public class VentanaMostrarListas extends JFrame {
         for (int i = 0; i < this.listas.getListas().size(); i++) {
             this.nombresListas.add(new JLabel("Nombre de la lista :"+this.listas.getListas().get(i).getNombreLista()));
             this.add(this.nombresListas.get(i));
-            this.ingresar.add(new JButton("Ingresar"));
+            this.ingresar.add(new JButton("Ingresar a lista"));
+            this.ingresar.get(i).addActionListener(this);
             this.add(this.ingresar.get(i));
             this.eliminar.add(new JButton("Eliminar"));
+            this.eliminar.get(i).addActionListener(this);
             this.add(this.eliminar.get(i));
         }
     }
 
-    private Lista crearLista() {
-        Lista lista = new Lista();
-        lista.setNombreLista("Lista1");
-        lista.setTipoLista("Deportista");
-        return lista;
+
+    public void actionPerformed(ActionEvent actionEvent) {
+        for (int i=0;i<this.listas.getListas().size();i++){
+            if (actionEvent.getSource()==this.ingresar.get(i)){
+                VentanaListaIndividual ventanaListaIndividual = new VentanaListaIndividual(this.listas.getListas().get(i),this.listas,this.datosTabla);
+            }
+            else if (actionEvent.getSource()==this.eliminar.get(i)){
+                this.listas.getListas().remove(i);
+                JOptionPane.showMessageDialog(null,"Se ha eliminado la lista correctamente");
+            }
+        }
+
     }
 }

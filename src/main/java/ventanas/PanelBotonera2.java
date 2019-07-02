@@ -1,4 +1,3 @@
-    
 package ventanas;
 
 import javax.swing.*;
@@ -13,6 +12,7 @@ public class PanelBotonera2 extends JPanel {
         super();
         iniciarBotonera();
     }
+
     private void iniciarBotonera(){
         this.setLayout(new BorderLayout());
         this.add(iniciarBotones(),BorderLayout.SOUTH);
@@ -25,5 +25,13 @@ public class PanelBotonera2 extends JPanel {
         this.mostrarListas = new JButton("Mostrar listas agregadas");
         botones.add(mostrarListas);
         return botones;
+    }
+
+    public JButton getIngresar() {
+        return ingresar;
+    }
+
+    public JButton getMostrarListas() {
+        return mostrarListas;
     }
 }

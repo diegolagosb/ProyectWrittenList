@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class PanelBotonera extends JPanel implements ActionListener {
+public class PanelBotonera extends JPanel {
 
     private JButton aceptar;
     private JButton volver;
@@ -15,21 +15,20 @@ public class PanelBotonera extends JPanel implements ActionListener {
 
     private void iniciarPanel(){
         this.aceptar = new JButton("Aceptar");
-        this.aceptar.addActionListener(this);
+
         this.add(aceptar);
         this.volver = new JButton("Volver");
-        this.volver.addActionListener(this);
+
         this.add(volver);
     }
 
 
-    public void actionPerformed(ActionEvent actionEvent) {
-        if (actionEvent.getSource().equals(this.aceptar)){
-            VentanaListaIndividual ventanaListaIndividual = new VentanaListaIndividual();
-        }
 
-        if (actionEvent.getSource()==this.volver){
-            System.exit(0);
-        }
+    public JButton getAceptar() {
+        return aceptar;
+    }
+
+    public JButton getVolver() {
+        return volver;
     }
 }

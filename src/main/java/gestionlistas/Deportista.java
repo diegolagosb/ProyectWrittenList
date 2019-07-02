@@ -2,25 +2,31 @@ package gestionlistas;
 
 public class Deportista extends Persona {
 
-	private FichaMedica fichaMedica;
+
 	private double matricula;
 	private String planAsignado;
 	private String numTelefonico;
 	private String fechaMatricula;
 
 	public Deportista() {
-		// TODO - implement Deportista.Deportista
-		throw new UnsupportedOperationException();
+		super();
+	}
+
+	public String[] datosTabla(){
+		String[] datosTabla = toString().split(";");
+		return datosTabla;
+	}
+
+	@Override
+	public String toString() {
+		return super.toString()+"Matrícula;Plan Asignado;Num.Teléfono;Fecha Inscripción;";
 	}
 
 	public String getPlanAsignado() {
 		return this.planAsignado;
 	}
 
-	/**
-	 * 
-	 * @param planAsignado
-	 */
+
 	public void setPlanAsignado(String planAsignado) {
 		this.planAsignado = planAsignado;
 	}
@@ -29,10 +35,7 @@ public class Deportista extends Persona {
 		return this.numTelefonico;
 	}
 
-	/**
-	 * 
-	 * @param numTelefonico
-	 */
+
 	public void setNumTelefonico(String numTelefonico) {
 		this.numTelefonico = numTelefonico;
 	}
@@ -41,10 +44,7 @@ public class Deportista extends Persona {
 		return this.fechaMatricula;
 	}
 
-	/**
-	 * 
-	 * @param fechaMatricula
-	 */
+
 	public void setFechaMatricula(String fechaMatricula) {
 		this.fechaMatricula = fechaMatricula;
 	}
@@ -53,10 +53,7 @@ public class Deportista extends Persona {
 		return this.matricula;
 	}
 
-	/**
-	 * 
-	 * @param matricula
-	 */
+
 	public void setMatricula(double matricula) {
 		this.matricula = matricula;
 	}

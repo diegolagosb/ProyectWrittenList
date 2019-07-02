@@ -7,17 +7,15 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class VentanaDeTipoLista extends JFrame {
+public class VentanaDeTipoLista extends JFrame implements ActionListener{
 
     private PanelBotonera botonera;
     private PanelNorte panelNorte;
     private PanelCentro panelCentro;
 
     public VentanaDeTipoLista() {
-        super();
         iniciarPaneles();
         iniciarVentana();
-
     }
 
     private void iniciarVentana() {
@@ -41,6 +39,8 @@ public class VentanaDeTipoLista extends JFrame {
     private void iniciarBotonera() {
         botonera = new PanelBotonera();
         this.add(this.botonera, BorderLayout.SOUTH);
+        this.botonera.getAceptar().addActionListener(this);
+        this.botonera.getVolver().addActionListener(this);
         this.botonera.getComponent(0);
     }
 
@@ -51,6 +51,29 @@ public class VentanaDeTipoLista extends JFrame {
 
     private void iniciarPanelCentral() {
         this.panelCentro = new PanelCentro();
-        this.add(this.panelCentro, BorderLayout.CENTER);        
+        this.add(this.panelCentro, BorderLayout.CENTER);
     }
+
+
+    public void actionPerformed(ActionEvent actionEvent) {
+        if (actionEvent.getSource()==this.botonera.getAceptar()){
+            validarRadioButtons();
+        }
+        if (actionEvent.getSource()==this.botonera.getVolver()){
+            this.getDefaultCloseOperation();
+        }
+    }
+
+    private void validarRadioButtons(){
+        if (this.panelNorte.getEducacion().isSelected()){
+            VentanaConfirmacionLista ventanaConfirmacionLista = new VentanaConfirmacionLista(this.panelCentro.getCuadroTexto().getText().trim(),"Educación");
+        }
+        if (this.panelNorte.getTrabajo().isSelected()){
+            VentanaConfirmacionLista ventanaConfirmacionLista = new VentanaConfirmacionLista(this.panelCentro.getCuadroTexto().getText().trim(),"Trabajo");
+        }
+        if (this.panelNorte.getDeporte().isSelected()){
+            VentanaConfirmacionLista ventanaConfirmacionLista = new VentanaConfirmacionLista(this.panelCentro.getCuadroTexto().getText().trim(),"Deporte");
+        }
+    }
+
 }

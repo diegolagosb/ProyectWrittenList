@@ -6,20 +6,33 @@ public class Estudiante extends Persona {
 	private String matricula;
 
 	public Estudiante() {
-		// TODO - implement Estudiante.Estudiante
-		throw new UnsupportedOperationException();
+		super();
+		this.apoderado = new Apoderado();
+	}
+
+	public String[] datosTabla(){
+		String[] datosTabla = toString().split(";");
+		return datosTabla;
+	}
+
+	@Override
+	public String toString(){
+	return super.toString()+"Matrícula;"+apoderado.toString();
 	}
 
 	public String getMatricula() {
 		return this.matricula;
 	}
 
-	/**
-	 * 
-	 * @param matricula
-	 */
 	public void setMatricula(String matricula) {
 		this.matricula = matricula;
 	}
 
+	public Apoderado getApoderado() {
+		return apoderado;
+	}
+
+	public void setApoderado(Apoderado apoderado) {
+		this.apoderado = apoderado;
+	}
 }
