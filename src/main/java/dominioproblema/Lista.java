@@ -1,4 +1,4 @@
-package gestionlistas;
+package dominioproblema;
 
 import java.util.ArrayList;
 

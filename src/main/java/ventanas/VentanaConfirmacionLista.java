@@ -1,6 +1,11 @@
 package ventanas;
 
-import gestionlistas.*;
+import dominioproblema.GestorLista;
+import dominioproblema.Estudiante;
+import dominioproblema.Persona;
+import dominioproblema.Lista;
+import dominioproblema.Trabajador;
+import dominioproblema.Deportista;
 
 import javax.swing.*;
 import java.awt.*;

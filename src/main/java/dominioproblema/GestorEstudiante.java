@@ -1,4 +1,4 @@
-package gestionlistas;
+package dominioproblema;
 
 import java.io.File;
 import java.util.*;

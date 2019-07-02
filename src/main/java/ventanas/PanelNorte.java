@@ -1,6 +1,6 @@
 package ventanas;
 
-import gestionlistas.Lista;
+import dominioproblema.Lista;
 
 import javax.swing.*;
 import java.awt.*;

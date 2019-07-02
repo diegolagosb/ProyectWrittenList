@@ -1,4 +1,4 @@
-package gestionlistas;
+package dominioproblema;
 
 public class Trabajador extends Persona {
 
